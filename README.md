@@ -39,7 +39,10 @@ pip install -r requirements.txt
 
 Stáhnout předtrénovaný model NN z následujícího [linku](https://drive.google.com/file/d/19kXQhMYW0am4dWocBShoDSeKgFMUd4ED/view?usp=sharing) a náhrát do adresáře ```resources```
 
-Lze spustit test v adresáři ```zdo2022/tests``` pomocí ```python -m pytest tests```
+Lze spustit test v adresáři ```zdo2022/tests``` pomocí
+```
+python -m pytest tests
+```
 
 Metoda ```predict()``` pro vytvoření anotací predikcí se nachází v ```zdo2022/main.py```
 
