@@ -26,6 +26,21 @@ centry hrotů vykreslit buď viditelným bodem nebo ohraničujícím boxem rozum
 - Primární úloha: tracking needle holderu
 - Bonusová úloha: tracking ostatních nástrojů
 
+## Instalace
+
+Pro použití GPU při běhu NN nejdříve
+```
+pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu113
+```
+Následně
+```
+pip install -r requirements.txt
+```
+
+Stáhnout předtrénovaný model NN z následujícího [linku](https://drive.google.com/file/d/19kXQhMYW0am4dWocBShoDSeKgFMUd4ED/view?usp=sharing) a náhrát do adresáře ```resources```
+
+Lze spustit test v adresáři ```zdo2022/tests```, metoda ```predict()``` pro vytvoření anotací predikcí se nachází v ```zdo2022/main.py```
+
 ## Řešení
 
 Problém byl řešen použitím neuronové sítě s architekturou Faster RCNN natrénovanou na našich datech spolu s OpenCV implementací CSRT trackeru.
@@ -90,6 +105,7 @@ Příklad chyby predikce je vidět zde:
 
 Zde je výčet jednotlivých modulů a jejich stručný popis:
 
+- ```main.py```: obsahuje metodu predict() ve třídě InstrumentTracker
 - ```data_loader.py```: načtení poskytnutých anotací
 - ```augmentations.py```: augmentace obrázků a bounding boxů, zápis anotací
 - ```normalize_annotations.py```: sjednocení formátu augmentací pro účely tvorby datasetu k trénování NN
